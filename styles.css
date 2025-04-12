@@ -385,6 +385,31 @@ body {
     outline: none;
 }
 
+.contact-form input[type="tel"] {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--light);
+    font-size: 1rem;
+}
+
+.contact-form input[type="tel"]:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Add validation styling */
+.contact-form input[type="tel"]:invalid {
+    border-color: var(--accent);
+}
+
+.contact-form input[type="tel"]:valid {
+    border-color: #4CAF50;
+}
+
 /* Footer */
 footer {
     background: var(--dark);
@@ -714,5 +739,67 @@ footer {
     .video-wrapper {
         margin: 0 -5%;
         border-radius: 0;
+    }
+}
+
+.featured-service {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.featured-service:hover {
+    transform: scale(1.08);
+}
+
+.service-features {
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.service-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+.featured-service .service-icon {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.featured-service h3 {
+    color: var(--primary);
+}
+
+.featured-service .learn-more {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--primary);
+    color: var(--dark);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.featured-service .learn-more:hover {
+    background: var(--accent);
+    color: var(--light);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .featured-service {
+        transform: scale(1);
+    }
+    
+    .featured-service:hover {
+        transform: scale(1.02);
     }
 } 

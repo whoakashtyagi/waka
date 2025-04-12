@@ -45,8 +45,10 @@
         <div class="highlights-container">
             <div class="video-wrapper">
                 <iframe 
-                    src="https://www.youtube.com/embed/YOUR_NEW_VIDEO_ID"
+                    src="https://www.youtube.com/embed/UnzrIEacYvE"
                     title="Waka Canada Highlights"
+                    width="100%"
+                    height="100%"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
@@ -65,20 +67,22 @@
             <h2>Our Services</h2>
         </div>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card featured-service">
                 <div class="service-content">
-                    <div class="service-icon">🎥</div>
-                    <h3>Video Production</h3>
-                    <p>Professional cinematography for events, commercials, and documentaries</p>
-                    <a href="#contact" class="learn-more">Learn More →</a>
+                    <div class="service-icon">📸🎥</div>
+                    <h3>Event Photography & Videography</h3>
+                    <p>Best-in-class event coverage across the Greater Toronto Area</p>
+                    <div class="service-features">
+                        <ul>
+                            <li>✓ Most Competitive Prices in GTA</li>
+                            <li>✓ Professional Equipment</li>
+                            <li>✓ Experienced Team</li>
+                            <li>✓ Same-Day Photo Previews</li>
+                            <li>✓ Quick Turnaround Time</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="learn-more">Book Now →</a>
                 </div>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">📸</div>
-                <h3>Photography</h3>
-                <p>Event coverage, portraits, and commercial photography</p>
-                <a href="#" class="learn-more">Learn More →</a>
             </div>
             
             <div class="service-card">
@@ -208,6 +212,10 @@
             <form class="contact-form" id="contactForm" onsubmit="return submitForm(event)">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Phone Number" 
+                       pattern="[0-9]{3}[0-9]{3}[0-9]{4}" 
+                       title="Please enter a valid phone number (e.g., 4386221769)"
+                       required>
                 <select name="service" required>
                     <option value="" disabled selected>Select Service</option>
                     <option value="video">Video Production</option>
@@ -255,6 +263,7 @@
             const templateParams = {
                 name: form.querySelector('input[name="name"]').value,
                 email: form.querySelector('input[name="email"]').value,
+                phone: form.querySelector('input[name="phone"]').value,
                 service: form.querySelector('select[name="service"]').value,
                 message: form.querySelector('textarea[name="message"]').value,
                 to_email: 'info@wakacanada.net'
