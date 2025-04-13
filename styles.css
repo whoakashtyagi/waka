@@ -42,8 +42,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    padding-left: 0;
-    margin-right: 3rem;
+    margin-right: 5rem;
 }
 
 .logo img {
@@ -55,22 +54,22 @@ body {
 .nav-links {
     display: flex;
     gap: 2rem;
-    margin-left: 0;
-    padding-right: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 250px;
 }
 
 .nav-links a {
     color: var(--light);
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     transition: color 0.3s ease;
+    font-size: 1rem;
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 /* Hero Section */
@@ -536,6 +535,15 @@ footer {
     
     .podcast-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        left: 180px;
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
     }
 }
 
