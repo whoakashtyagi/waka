@@ -870,4 +870,28 @@ footer {
     width: 100%;
     top: 0;
     z-index: 1000;
+}
+
+.footer-credit {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-credit a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-credit a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .footer-credit {
+        margin: 1rem 0;
+        font-size: 0.9rem;
+    }
 } 
