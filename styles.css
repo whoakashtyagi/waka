@@ -215,55 +215,63 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 2rem 0;
 }
 
 .service-card {
-    position: relative;
     background: rgba(255, 255, 255, 0.05);
-    padding: 3rem 2rem;
     border-radius: 20px;
-    text-align: center;
+    padding: 2rem;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-
-.service-content {
-    position: relative;
-    z-index: 1;
+    height: 100%;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(255, 184, 0, 0.1);
     background: rgba(255, 255, 255, 0.08);
 }
 
+.service-features {
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.service-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.service-card h3 {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--light);
-}
-
-.service-card p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .learn-more {
-    color: var(--accent);
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--primary);
+    color: var(--dark);
+    border-radius: 30px;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
 }
 
 .learn-more:hover {
-    color: var(--primary);
+    background: var(--accent);
+    color: var(--light);
+    transform: translateY(-3px);
 }
 
 /* Update section header for services */
@@ -559,6 +567,15 @@ footer {
         padding: 0.3rem 0.5rem;
         white-space: nowrap;
     }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -780,68 +797,6 @@ footer {
     .video-wrapper {
         margin: 0 -5%;
         border-radius: 0;
-    }
-}
-
-.featured-service {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
-}
-
-.featured-service:hover {
-    transform: scale(1.08);
-}
-
-.service-features {
-    margin: 1.5rem 0;
-    text-align: left;
-}
-
-.service-features ul {
-    list-style: none;
-    padding: 0;
-}
-
-.service-features li {
-    margin-bottom: 0.8rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.9rem;
-}
-
-.featured-service .service-icon {
-    font-size: 2.5rem;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.featured-service h3 {
-    color: var(--primary);
-}
-
-.featured-service .learn-more {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background: var(--primary);
-    color: var(--dark);
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
-
-.featured-service .learn-more:hover {
-    background: var(--accent);
-    color: var(--light);
-    transform: translateY(-3px);
-}
-
-@media (max-width: 768px) {
-    .featured-service {
-        transform: scale(1);
-    }
-    
-    .featured-service:hover {
-        transform: scale(1.02);
     }
 }
 
