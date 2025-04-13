@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -44,19 +46,16 @@
         </div>
         <div class="highlights-container">
             <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/UnzrIEacYvE"
-                    title="Waka Canada Highlights"
-                    width="100%"
-                    height="100%"
-                    frameborder="0"
+                <iframe id="highlights-video" title="Waka Canada Highlights" width="100%" height="100%" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
                 </iframe>
             </div>
             <div class="highlights-content">
                 <h3>Capturing Moments That Matter</h3>
-                <p>Experience the essence of our creative journey through this carefully curated highlight reel. From stunning cinematography to powerful storytelling, witness the quality and passion we bring to every project.</p>
+                <p>Experience the essence of our creative journey through this carefully curated highlight reel. From
+                    stunning cinematography to powerful storytelling, witness the quality and passion we bring to every
+                    project.</p>
             </div>
         </div>
     </section>
@@ -183,49 +182,8 @@
             <h2>Our Podcast Series</h2>
             <p class="section-description">Exploring Nigerian Stories and Culture in Canada</p>
         </div>
-        <div class="podcast-grid">
-            <div class="podcast-episode">
-                <div class="episode-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/WZWcHAf-Dvk?rel=0&showinfo=0" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="episode-content">
-                    <h3>Episode 1</h3>
-                    <p>EXCLUSIVE INTERVIEW WITH THE NIGERIAN BORN TORONTO POLICE OFFICER BASSEY OSAGIE</p>
-                </div>
-            </div>
-            <div class="podcast-episode">
-                <div class="episode-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/Dlot2byO-lQ?rel=0&showinfo=0" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="episode-content">
-                    <h3>Episode 2</h3>
-                    <p>Why I quit my 9-5 to do event planning in Canada. FOLAKEMI SOFOWORA explains... BUSINESS ARENA</p>
-                </div>
-            </div>
-            <div class="podcast-episode">
-                <div class="episode-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/_WyaGLmYANE?rel=0&showinfo=0" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="episode-content">
-                    <h3>Episode 3</h3>
-                    <p>Movie Director Tope Adebayo speaks on Nollywood Yoruba movie JagunJagun Part 2</p>
-                </div>
-            </div>
+        <div class="podcast-grid" id="podcast-container">
+            <!-- Podcast episodes will be dynamically inserted here -->
         </div>
     </section>
 
@@ -235,45 +193,8 @@
             <h2>Nigerian Cinema Spotlight</h2>
             <p class="section-description">Showcasing the Best of Nigerian Cinema in Canada</p>
         </div>
-        <div class="nollywood-grid">
-            <div class="nollywood-feature">
-                <div class="feature-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/SKObTXoEe0w?rel=0&showinfo=0" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="feature-content">
-                    <h3>TORONTO LAWA Episode 13</h3>
-                    <p class="series-description">Toronto Lawa is a Yoruba Nollywood comedy skit series set in Canada. The series follows the life of Nigerian immigrants by casting a comedic lens into their lives and aspirations in Canada.</p>
-                    <div class="movie-details">
-                        <span>🎬 Comedy Series</span>
-                        <span>🌟 Now Streaming</span>
-                        <span>🇳🇬 Yoruba/English</span>
-                    </div>
-                </div>
-            </div>
-            <div class="nollywood-feature">
-                <div class="feature-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/Ngg0VkQccGQ?rel=0&showinfo=0" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="feature-content">
-                    <h3>TORONTO LAWA S1 Episode 1</h3>
-                    <p class="series-description">Toronto Lawa stands as a carefully crafted episodic production, purposefully designed to offer entertainment to its audience. Delving into the intricacies of immigrant experiences, the series meticulously elucidates a nuanced perspective on the adoption of contrived lifestyles by certain individuals to both garner approval and conform to societal norms in a foreign environment.</p>
-                    <div class="movie-details">
-                        <span>🎬 Comedy Series</span>
-                        <span>🌟 Now Streaming</span>
-                        <span>🇳🇬 Yoruba/English</span>
-                    </div>
-                </div>
-            </div>
+        <div class="nollywood-grid" id="spotlight-container">
+            <!-- Spotlight content will be dynamically inserted here -->
         </div>
     </section>
 
@@ -295,10 +216,8 @@
             <form class="contact-form" id="contactForm" onsubmit="return submitForm(event)">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
-                <input type="tel" name="phone" placeholder="Phone Number" 
-                       pattern="[0-9]{3}[0-9]{3}[0-9]{4}" 
-                       title="Please enter a valid phone number (e.g., 4386221769)"
-                       required>
+                <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                    title="Please enter a valid phone number (e.g., 4386221769)" required>
                 <select name="service" required>
                     <option value="" disabled selected>Select Service</option>
                     <option value="video">Video Production</option>
@@ -320,7 +239,8 @@
                 <!-- <a href="#">Privacy Policy</a> -->
             </div>
             <div class="footer-credit">
-                <p>Powered by <a href="https://www.prapper.com" target="_blank" rel="noopener noreferrer">Prapper</a></p>
+                <p>Powered by <a href="https://www.prapper.com" target="_blank" rel="noopener noreferrer">Prapper</a>
+                </p>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Waka Canada. All rights reserved.</p>
@@ -330,22 +250,162 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        (function() {
+        // Initialize EmailJS
+        (function () {
             emailjs.init("MZWNXxfmfGy-c_FO9");
         })();
 
+        // Data embedded directly in the HTML
+        const defaultData = {
+            "highlights": [
+                {
+                    "id": "highlight1",
+                    "url": "https://www.youtube.com/embed/UnzrIEacYvE",
+                    "title": null,
+                    "description": null,
+                    "subtitle1": null,
+                    "subtitle2": null,
+                    "subtitle3": null
+                }
+            ],
+            "podcasts": [
+                {
+                    "id": "podcast1",
+                    "url": "https://www.youtube.com/embed/WZWcHAf-Dvk?rel=0&showinfo=0",
+                    "title": "Episode 1",
+                    "description": "EXCLUSIVE INTERVIEW WITH THE NIGERIAN BORN TORONTO POLICE OFFICER BASSEY OSAGIE",
+                    "subtitle1": null,
+                    "subtitle2": null,
+                    "subtitle3": null
+                },
+                {
+                    "id": "podcast2",
+                    "url": "https://www.youtube.com/embed/Dlot2byO-lQ?rel=0&showinfo=0",
+                    "title": "Episode 2",
+                    "description": "Why I quit my 9-5 to do event planning in Canada. FOLAKEMI SOFOWORA explains... BUSINESS ARENA",
+                    "subtitle1": null,
+                    "subtitle2": null,
+                    "subtitle3": null
+                },
+                {
+                    "id": "podcast3",
+                    "url": "https://www.youtube.com/embed/_WyaGLmYANE?rel=0&showinfo=0",
+                    "title": "Episode 3",
+                    "description": "Movie Director Tope Adebayo speaks on Nollywood Yoruba movie JagunJagun Part 2",
+                    "subtitle1": null,
+                    "subtitle2": null,
+                    "subtitle3": null
+                }
+            ],
+            "spotlights": [
+                {
+                    "id": "spotlight1",
+                    "url": "https://www.youtube.com/embed/SKObTXoEe0w?rel=0&showinfo=0",
+                    "title": "TORONTO LAWA Episode 13",
+                    "description": "Toronto Lawa is a Yoruba Nollywood comedy skit series set in Canada. The series follows the life of Nigerian immigrants by casting a comedic lens into their lives and aspirations in Canada.",
+                    "subtitle1": "Comedy Series",
+                    "subtitle2": "Now Streaming",
+                    "subtitle3": "🇳🇬 Yoruba/English"
+                },
+                {
+                    "id": "spotlight2",
+                    "url": "https://www.youtube.com/embed/Ngg0VkQccGQ?rel=0&showinfo=0",
+                    "title": "TORONTO LAWA S1 Episode 1",
+                    "description": "Toronto Lawa stands as a carefully crafted episodic production, purposefully designed to offer entertainment to its audience. Delving into the intricacies of immigrant experiences, the series meticulously elucidates a nuanced perspective on the adoption of contrived lifestyles by certain individuals to both garner approval and conform to societal norms in a foreign environment.",
+                    "subtitle1": "Comedy Series",
+                    "subtitle2": "Now Streaming",
+                    "subtitle3": "🇳🇬 Yoruba/English"
+                }
+            ]
+        };
+
+        // Populate highlights section
+        function populateHighlights() {
+            if (defaultData.highlights && defaultData.highlights.length > 0) {
+                const highlight = defaultData.highlights[0];
+                const iframe = document.getElementById('highlights-video');
+                iframe.src = highlight.url;
+            }
+        }
+
+        // Populate podcast section
+        function populatePodcasts() {
+            const podcastContainer = document.getElementById('podcast-container');
+            podcastContainer.innerHTML = '';
+
+            if (defaultData.podcasts && defaultData.podcasts.length > 0) {
+                defaultData.podcasts.forEach(podcast => {
+                    const podcastElement = document.createElement('div');
+                    podcastElement.className = 'podcast-episode';
+
+                    podcastElement.innerHTML = `
+                        <div class="episode-video">
+                            <iframe 
+                                src="${podcast.url}" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="episode-content">
+                            <h3>${podcast.title}</h3>
+                            <p>${podcast.description}</p>
+                        </div>
+                    `;
+
+                    podcastContainer.appendChild(podcastElement);
+                });
+            }
+        }
+
+        // Populate spotlight section
+        function populateSpotlights() {
+            const spotlightContainer = document.getElementById('spotlight-container');
+            spotlightContainer.innerHTML = '';
+
+            if (defaultData.spotlights && defaultData.spotlights.length > 0) {
+                defaultData.spotlights.forEach(spotlight => {
+                    const spotlightElement = document.createElement('div');
+                    spotlightElement.className = 'nollywood-feature';
+
+                    spotlightElement.innerHTML = `
+                        <div class="feature-video">
+                            <iframe 
+                                src="${spotlight.url}" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="feature-content">
+                            <h3>${spotlight.title}</h3>
+                            <p class="series-description">${spotlight.description}</p>
+                            <div class="movie-details">
+                                ${spotlight.subtitle1 ? `<span>🎬 ${spotlight.subtitle1}</span>` : ''}
+                                ${spotlight.subtitle2 ? `<span>🌟 ${spotlight.subtitle2}</span>` : ''}
+                                ${spotlight.subtitle3 ? `<span>${spotlight.subtitle3}</span>` : ''}
+                            </div>
+                        </div>
+                    `;
+
+                    spotlightContainer.appendChild(spotlightElement);
+                });
+            }
+        }
+
+        // Form submission function
         function submitForm(event) {
             event.preventDefault();
-            
+
             const form = document.getElementById('contactForm');
             const formMessage = document.getElementById('formMessage');
             const submitButton = form.querySelector('button[type="submit"]');
-            
+
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
             formMessage.className = 'form-message';
             formMessage.textContent = '';
-            
+
             const templateParams = {
                 name: form.querySelector('input[name="name"]').value,
                 email: form.querySelector('input[name="email"]').value,
@@ -354,29 +414,37 @@
                 message: form.querySelector('textarea[name="message"]').value,
                 to_email: 'info@wakacanada.net'
             };
-            
+
             emailjs.send(
                 'service_4dke18j',
                 'template_zmvspqv',
                 templateParams
             )
-            .then(function() {
-                formMessage.className = 'form-message success';
-                formMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                form.reset();
-            })
-            .catch(function(error) {
-                formMessage.className = 'form-message error';
-                formMessage.textContent = 'Oops! Something went wrong. Please try again later.';
-                console.error('EmailJS error:', error);
-            })
-            .finally(function() {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
-            });
-            
+                .then(function () {
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                    form.reset();
+                })
+                .catch(function (error) {
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = 'Oops! Something went wrong. Please try again later.';
+                    console.error('EmailJS error:', error);
+                })
+                .finally(function () {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                });
+
             return false;
         }
+
+        // Initialize content when the page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            populateHighlights();
+            populatePodcasts();
+            populateSpotlights();
+        });
     </script>
 </body>
+
 </html>
