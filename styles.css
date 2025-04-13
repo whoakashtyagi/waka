@@ -374,7 +374,6 @@ body {
 }
 
 .contact-form input,
-.contact-form select,
 .contact-form textarea {
     padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
@@ -384,7 +383,6 @@ body {
 }
 
 .contact-form input:focus,
-.contact-form select:focus,
 .contact-form textarea:focus {
     border-color: var(--primary);
     outline: none;
@@ -895,3 +893,34 @@ footer {
         font-size: 0.9rem;
     }
 } 
+
+/* Style the select dropdown */
+.contact-form select {
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark text color */
+    border: 1px solid #ccc; /* Border color */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none; /* Remove default arrow for custom styling */
+}
+
+/* Style the dropdown options */
+.contact-form select option {
+    background-color: #ffffff; /* White background for options */
+    color: #333; /* Dark text color */
+}
+
+/* Add hover effect for the dropdown */
+.contact-form select:hover {
+    border-color: #007bff; /* Blue border on hover */
+}
+
+/* Add focus effect for the dropdown */
+.contact-form select:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow */
+}
