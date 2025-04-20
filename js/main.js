@@ -3,7 +3,7 @@ import { updateDefaultData } from './defaultData.js';
 import { fetchContentData } from './api.js';
 import { toggleEditMode } from './editMode.js';
 import { submitForm } from './form.js';
-import { handleLogoClick } from './logo.js';
+import { handleLogoClick, logoClickCount } from './logo.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.logo').addEventListener('click', handleLogoClick);

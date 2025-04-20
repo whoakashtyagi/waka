@@ -1,4 +1,7 @@
 // js/logo.js
+export let logoClickCount = 0;
+let logoClickTimeout = null;
+
 export function handleLogoClick() {
     logoClickCount++;
 
