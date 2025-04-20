@@ -926,10 +926,12 @@ footer {
 }
 
 .edit-controls {
+  display: none;
+}
+
+.edit-controls.visible {
   display: flex;
-  gap: 8px;
-  margin-left: 20px;
-  align-items: center;
+  gap: 10px;
 }
 
 .edit-btn,
@@ -973,7 +975,7 @@ footer {
 
 /* Make editable content more visually appealing */
 .editable {
-  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border: 1px dashed rgba(255, 255, 255, 0.7);
   padding: 4px;
   margin: -4px;
   border-radius: 4px;
@@ -1024,7 +1026,7 @@ footer {
 
 /* Make editable content more visually appealing */
 .editable {
-  border: 1px dashed rgba(0, 0, 0, 0.2) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.7) !important;
   padding: 4px !important;
   margin: -4px !important;
   border-radius: 4px !important;
@@ -1088,4 +1090,93 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 5;
   pointer-events: none;
+}
+
+/* Password Modal Styles */
+.password-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.password-modal-content {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.password-modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.password-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.password-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.password-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.password-submit-btn,
+.password-cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.password-submit-btn {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.password-submit-btn:hover {
+  background-color: #3a80d2;
+}
+
+.password-cancel-btn {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.password-cancel-btn:hover {
+  background-color: #444444;
 }
