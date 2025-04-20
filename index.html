@@ -253,10 +253,10 @@
 
     <script>
 
-        const supabaseUrl = 'https://gjjropnxkiipfswktxba.supabase.co';
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqanJvcG54a2lpcGZzd2t0eGJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzcxOTUyMDgsImV4cCI6MjA1Mjc3MTIwOH0.sXd7-DPZ-n9J7qmXcP0mSb1YMyKJw6QukkFsQqu4bY0';
+        const supabaseUrl = '';
+        const supabaseKey = '';
 
-        const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+        // const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
         // Initialize EmailJS
         (function () {
             emailjs.init("MZWNXxfmfGy-c_FO9");
@@ -523,7 +523,7 @@
 
         // Initialize content when the page loads
         document.addEventListener('DOMContentLoaded', function () {
-            fetchContentData();
+            // fetchContentData();
             populateHighlights();
             populatePodcasts();
             populateSpotlights();
