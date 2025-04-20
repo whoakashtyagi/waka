@@ -7,6 +7,8 @@
     <title>Waka Canada</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -248,15 +250,20 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script>
+
+        const supabaseUrl = 'https://gjjropnxkiipfswktxba.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqanJvcG54a2lpcGZzd2t0eGJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzcxOTUyMDgsImV4cCI6MjA1Mjc3MTIwOH0.sXd7-DPZ-n9J7qmXcP0mSb1YMyKJw6QukkFsQqu4bY0';
+
+        const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
         // Initialize EmailJS
         (function () {
             emailjs.init("MZWNXxfmfGy-c_FO9");
         })();
 
         // Data embedded directly in the HTML
-        const defaultData = {
+        let defaultData = {
             "highlights": [
                 {
                     "id": "highlight1",
@@ -269,15 +276,6 @@
                 }
             ],
             "podcasts": [
-                {
-                    "id": "podcast1",
-                    "url": "https://www.youtube.com/embed/WZWcHAf-Dvk?rel=0&showinfo=0",
-                    "title": "Episode 1",
-                    "description": "EXCLUSIVE INTERVIEW WITH THE NIGERIAN BORN TORONTO POLICE OFFICER BASSEY OSAGIE",
-                    "subtitle1": null,
-                    "subtitle2": null,
-                    "subtitle3": null
-                },
                 {
                     "id": "podcast2",
                     "url": "https://www.youtube.com/embed/Dlot2byO-lQ?rel=0&showinfo=0",
@@ -318,6 +316,91 @@
                 }
             ]
         };
+
+        async function fetchContentData() {
+            try {
+                // Fetch from content table
+                const { data, error } = await supabaseClient
+                    .from('prapper_cms')
+                    .select('*')
+                    .eq('id', 'wakacanada')
+                    .single();
+
+                if (error) throw error;
+
+                if (data && data.content_data) {
+                    // Update defaultData with the fetched data
+                    defaultData = data.content_data;
+                    console.log('Content loaded from Supabase');
+                }
+
+                // Initialize content
+                populateHighlights();
+                populatePodcasts();
+                populateSpotlights();
+
+                // Add admin controls if admin is logged in
+                // checkAdminStatus();
+
+            } catch (error) {
+                console.error('Error fetching content:', error);
+
+                // Use default data as fallback
+                populateHighlights();
+                populatePodcasts();
+                populateSpotlights();
+            }
+        }
+
+
+        // Function to update content in Supabase
+        async function updateContentInSupabase(contentData) {
+            try {
+                console.log('Updating content in Supabase...');
+
+                // Update the content in the prapper_cms table
+                const { data, error } = await supabaseClient
+                    .from('prapper_cms')
+                    .update({
+                        content_data: contentData,
+                        updated_at: new Date()
+                    })
+                    .eq('id', 'wakacanada');
+
+                if (error) {
+                    console.error('Error updating content:', error);
+                    throw error;
+                }
+
+                console.log('Content updated successfully in Supabase');
+                return { success: true };
+
+            } catch (error) {
+                console.error('Failed to update content:', error);
+                return { success: false, error: error.message };
+            }
+        }
+
+        // Example usage:
+        // This function could be called after editing content
+        async function saveContentChanges() {
+            // Update the defaultData object with any changes made
+            // For example, after editing through a form or admin interface
+
+            // Then save the updated data to Supabase
+            const result = await updateContentInSupabase(defaultData);
+
+            if (result.success) {
+                alert('Content saved successfully!');
+
+                // Refresh the content on the page
+                populateHighlights();
+                populatePodcasts();
+                populateSpotlights();
+            } else {
+                alert('Failed to save content: ' + result.error);
+            }
+        }
 
         // Populate highlights section
         function populateHighlights() {
@@ -440,6 +523,7 @@
 
         // Initialize content when the page loads
         document.addEventListener('DOMContentLoaded', function () {
+            fetchContentData();
             populateHighlights();
             populatePodcasts();
             populateSpotlights();
