@@ -26,7 +26,7 @@ app.use(express.json());
 // Set EJS as the templating engine
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
-app.set('views', __dirname);
+app.set('views', path.join(__dirname, '../'));
 
 // Serve the HTML file with environment variables injected
 app.get('/', (_req, res) => {
