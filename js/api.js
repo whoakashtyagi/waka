@@ -4,7 +4,7 @@ import { populateHighlights, populatePodcasts, populateSpotlights } from './popu
 
 export async function fetchContentData() {
   try {
-    const res = await fetch(`${API_BASE}/api/content`);
+    const res = await fetch(`/api/content`);
     const { content, updated_at } = await res.json();
 
     const localUpdatedAt = localStorage.getItem('wakaCanadaUpdatedAt');
@@ -31,7 +31,7 @@ export async function fetchContentData() {
 
 export async function updateContentInSupabase(contentData) {
   try {
-    const res = await fetch(`${API_BASE}/api/content`, {
+    const res = await fetch(`/api/content`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content: contentData })

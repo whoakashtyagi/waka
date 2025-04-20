@@ -29,10 +29,8 @@ app.set('view engine', 'html');
 app.set('views', __dirname);
 
 // Serve the HTML file with environment variables injected
-app.get('/', (req, res) => {
-    res.render('index.html', {
-        API_BASE: process.env.API_BASE || `http://localhost:${PORT}`
-    });
+app.get('/', (_req, res) => {
+    res.render('index.html');
 });
 
 // Serve static files (e.g., CSS, JS, images)
